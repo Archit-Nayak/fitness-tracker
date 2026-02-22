@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -29,6 +30,12 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)} 
         />
         <button className="bg-indigo-600 text-white w-full py-2 rounded">Sign In</button>
+        <p className="mt-4 text-sm text-center">
+  Don’t have an account?{" "}
+  <Link to="/register" className="text-indigo-600 hover:underline">
+    Create Account
+  </Link>
+</p>
       </form>
     </div>
   );
